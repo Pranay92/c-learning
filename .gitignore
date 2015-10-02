@@ -1,6 +1,8 @@
 **/*.txt
 **/*.out
 **/*.DS_store
+**/*.exe
 
+functions/a.out
 .o
 *.o
