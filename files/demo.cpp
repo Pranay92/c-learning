@@ -8,6 +8,9 @@ using namespace std;
 int main() {
 
 	ofstream writer("demo.txt");
+	ifstream reader("demo.txt");
+
+	char letter;
 
 	if(!writer) {
 		cout << "Error openeing file" << endl;
@@ -18,6 +21,18 @@ int main() {
 	writer << "Keep working hard to make your dreams come true." << endl;
 
 	writer.close();
+	
+
+	if(!reader) {
+		cout << "Error opening file for reading" << endl;
+
+		return -1;
+ 	}
+
+ 	while(!reader.eof()) {
+ 		reader.get(letter);
+ 		cout << letter;
+ 	}
 
 	return 0;
 }
