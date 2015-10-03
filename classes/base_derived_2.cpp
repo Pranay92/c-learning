@@ -54,15 +54,42 @@ class Programmer : public Person {
 
 };
 
+class Architect : public Person {
+	
+	private:
+
+		string experience;
+
+	public:
+
+		string getExp() {
+			return experience;
+		};
+
+		string info() {
+
+			int age  = Person::getAge();
+			string name = Person::getName();
+
+			string info = "Hi my name is " + string(name) + " and I'm a" + to_string(age) + " years old Architect and I'm working for " + string(experience);
+
+			return info;
+		};
+
+		Architect(int age, string name, string exp) : Person(age,name), experience(exp) {
+
+		};
+};
+
 int main() {
 
 	Person Mike(21,"MIke");
-
-	cout << Mike.info() << endl;
-
 	Programmer Pranay(24,"Pranay");
+	Architect Morris(25,"Morris","2 years and 2 months");
 
 	cout << Pranay.info() << endl;
+	cout << Mike.info() << endl;
+	cout << Morris.info() << endl;
 
 	return 0;
 }
